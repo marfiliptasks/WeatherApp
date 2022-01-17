@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.mf.weatherapp.model.location.LocationModel" />
+
+        <variable
+            name="onClickListener"
+            type="com.mf.weatherapp.ui.base.ItemClickListener" />
+
+        <variable
+            name="card"
+            type="androidx.cardview.widget.CardView" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/location_item_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:clickable="true"
+        app:cardBackgroundColor="@color/gray_dark"
+        android:focusable="true"
+        android:transitionName="@{@string/location_card_transition_name(item.getKey())}"
+        android:onClick="@{() -> onClickListener.onItemClicked(item, card)}"
+        app:cardCornerRadius="@dimen/corner_radius">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:padding="@dimen/default_margin"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/location_item_city_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.nameWithCountryCode}"
+                android:layout_marginVertical="@dimen/margin_small"
+                style="@style/location_item_name_style"
+                app:layout_constraintEnd_toStartOf="@id/location_item_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/location_item_icon"
+                tools:text="MIASTO" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/location_item_country_state"
+                style="@style/location_item_state_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{item.state}"
+                app:layout_constraintEnd_toStartOf="@id/location_item_icon"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/location_item_city_name"
+                app:layout_constraintBottom_toBottomOf="@id/location_item_icon"
+                tools:text="California" />
+
+            <ImageView
+                android:id="@+id/location_item_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_baseline_place"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="ContentDescription" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

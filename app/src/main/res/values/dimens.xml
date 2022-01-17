@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_small">6dp</dimen>
+    <dimen name="default_margin">10dp</dimen>
+    <dimen name="text_medium">20sp</dimen>
+    <dimen name="text_big">25sp</dimen>
+    <dimen name="text_huge">40sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+
+    <dimen name="box_stoke_width">2dp</dimen>
+    <dimen name="searchbar_radius">20dp</dimen>
+
+    <dimen name="searchbar_height">45dp</dimen>
+    <dimen name="searchbar_text_size">16sp</dimen>
+    <dimen name="padding_dropdown_item">8dp</dimen>
+
+    <dimen name="corner_radius">10dp</dimen>
+</resources>

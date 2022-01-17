@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="find_location">Szukaj miejsca</string>
+    <string name="country">Kraj</string>
+    <string name="city">Nazwa miasta</string>
+    <string name="location_item_area_title">Typ obszaru</string>
+    <string name="area">Nazwa obszaru</string>
+    <string name="wrong_city_name">Wprowadź poprawną nazwę miasta</string>
+    <string name="humidity">Wilgotność</string>
+    <string name="loading_data">Pobieranie danych...</string>
+    <string name="connection_error">Wystąpił błąd! Sprawdź czy masz połączenie z internetem!</string>
+    <string name="other_error">Wystąpił błąd! Mogłeś przekroczyć dzienny limit.</string>
+    <string name="you_were_looking_for">Wyszukaj</string>
+    <string name="sunrise">Wschód</string>
+    <string name="sunset">Zachód</string>
+    <string name="temp_day">Temp. dzień</string>
+    <string name="temp_night">Temp. noc</string>
+    <string name="temp_eve">Temp. wieczór</string>
+    <string name="temp_morn">Temp. rano</string>
+    <string name="pressure">Ciśnienie</string>
+    <string name="wind_direction">Kierunek wiatru</string>
+    <string name="wind_speed">Prędkość wiatru</string>
+</resources>

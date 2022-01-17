@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="location_item_name_style">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">@dimen/text_margin</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="weather_header_city_name_style">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">@dimen/header_margin</item>
+        <item name="android:layout_marginEnd">@dimen/header_margin</item>
+        <item name="android:textSize">@dimen/text_big</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="location_item_state_style">
+        <item name="android:layout_marginStart">@dimen/text_margin</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/dark_white</item>
+    </style>
+
+    <style name="weather_header_state_style">
+        <item name="android:layout_marginStart">@dimen/header_margin</item>
+        <item name="android:layout_marginEnd">@dimen/header_margin</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+        <item name="android:textColor">@color/dark_white</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="SearchbarStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxCornerRadiusBottomStart">@dimen/searchbar_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/searchbar_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/searchbar_radius</item>
+        <item name="boxCornerRadiusTopStart">@dimen/searchbar_radius</item>
+        <item name="boxStrokeWidth">@dimen/box_stoke_width</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:paddingStart">@dimen/default_margin</item>
+        <item name="android:paddingEnd">@dimen/default_margin</item>
+        <item name="android:layout_marginBottom">@dimen/default_margin</item>
+        <item name="boxStrokeWidthFocused">@dimen/box_stoke_width</item>
+        <item name="android:hint">@string/find_location</item>
+        <item name="android:textAlignment">center</item>
+        <item name="endIconCheckable">true</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="endIconTint">@color/white</item>
+        <item name="startIconDrawable">@drawable/ic_baseline_location_searching</item>
+        <item name="startIconTint">@color/white</item>
+        <item name="android:layout_height">@dimen/searchbar_height</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <dimen name="text_margin">10dp</dimen>
+    <dimen name="header_margin">25dp</dimen>
+
+</resources>

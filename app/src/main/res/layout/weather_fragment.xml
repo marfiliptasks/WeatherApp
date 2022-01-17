@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            type="com.mf.weatherapp.model.location.LocationModel"
+            name="location" />
+        <variable
+            type="com.mf.weatherapp.ui.weather.WeatherViewModel"
+            name="viewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    app:state="@{viewModel.state}"
+    android:animateLayoutChanges="true"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/weather_fragment_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        app:cardBackgroundColor="@color/gray_dark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:transitionName="@string/weather_card_transition_name"
+        app:cardCornerRadius="@dimen/corner_radius">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:padding="@dimen/default_margin"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/location_item_city_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@{location.nameWithCountryCode}"
+                style="@style/weather_header_city_name_style"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/location_item_icon"
+                tools:text="MIASTO" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/location_item_country_state"
+                style="@style/weather_header_state_style"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{location.state}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/location_item_city_name"
+                app:layout_constraintBottom_toBottomOf="@id/location_item_icon"
+                tools:text="California" />
+
+            <ImageView
+                android:id="@+id/location_item_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_baseline_place"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="ContentDescription" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/weather_fragment_rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:data="@{viewModel.items}"
+        android:layout_margin="@dimen/default_margin"
+        android:padding="@dimen/default_margin"
+        android:background="@drawable/rectangle_black"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/weather_item"
+        app:layout_constraintTop_toBottomOf="@id/weather_fragment_card"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

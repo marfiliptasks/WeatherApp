@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.mf.weatherapp.model.weather.WeatherInfoModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/weather_item_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(item.formattedHeaderTime)}"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_big"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1231231" />
+
+        <TextView
+            android:id="@+id/weather_item_weather_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.weather.get(0).main}"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weather_item_date"
+            tools:text="Pochmurno" />
+
+        <TextView
+            android:id="@+id/weather_item_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.weather.get(0).description}"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weather_item_weather_main"
+            tools:text="Chmury" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/weather_fragment_guideline"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+
+        <View
+            android:id="@+id/weather_info_upper_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weather_item_desc" />
+        <View
+            android:id="@+id/weather_info_vertical_divider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weather_item_desc" />
+
+        <include
+            android:id="@+id/weather_fragment_sunrise"
+            layout="@layout/text_with_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:header="@{@string/sunrise}"
+            app:layout_constraintEnd_toStartOf="@id/weather_fragment_guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weather_item_desc"
+            app:value="@{String.valueOf(item.formattedSunrise)}" />
+
+        <include
+            android:id="@+id/weather_fragment_sunset"
+            layout="@layout/text_with_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:header="@{@string/sunset}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/weather_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@id/weather_item_desc"
+            app:value="@{String.valueOf(item.formattedSunset)}" />
+
+        <include
+            android:id="@+id/weather_fragment_morn"
+            layout="@layout/text_with_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:header="@{@string/temp_morn}"
+            app:layout_constraintEnd_toEndOf="@id/weather_fragment_guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weather_fragment_sunrise"
+            app:shouldSetValueColor="@{true}"
+            app:value="@{String.valueOf(item.temp.morn)}" />
+
+        <include
+            android:id="@+id/weather_fragment_day"
+            layout="@layout/text_with_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:header="@{@string/temp_day}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/weather_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@id/weather_fragment_sunset"
+            app:shouldSetValueColor="@{true}"
+            app:value="@{String.valueOf(item.temp.day)}" />
+
+
+        <include
+            android:id="@+id/weather_fragment_eve"
+            layout="@layout/text_with_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:header="@{@string/temp_eve}"
+            app:layout_constraintEnd_toEndOf="@id/weather_fragment_guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weather_fragment_morn"
+            app:shouldSetValueColor="@{true}"
+            app:value="@{String.valueOf(item.temp.eve)}" />
+
+        <include
+            android:id="@+id/weather_fragment_night"
+            layout="@layout/text_with_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:header="@{@string/temp_night}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/weather_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@id/weather_fragment_day"
+            app:shouldSetValueColor="@{true}"
+            app:value="@{String.valueOf(item.temp.night)}" />
+
+
+        <include
+            android:id="@+id/weather_fragment_pressure"
+            layout="@layout/text_with_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:header="@{@string/pressure}"
+            app:layout_constraintEnd_toEndOf="@id/weather_fragment_guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weather_fragment_night"
+            app:value="@{String.valueOf(item.pressure)}" />
+
+        <include
+            android:id="@+id/weather_fragment_humidity"
+            layout="@layout/text_with_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:header="@{@string/humidity}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/weather_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@id/weather_fragment_night"
+            app:value="@{String.valueOf(item.humidity)}" />
+
+        <include
+            android:id="@+id/weather_fragment_wind_speed"
+            layout="@layout/text_with_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:header="@{@string/wind_speed}"
+            app:layout_constraintEnd_toEndOf="@id/weather_fragment_guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weather_fragment_humidity"
+            app:value="@{String.valueOf(item.windSpeed)}" />
+
+        <include
+            android:id="@+id/weather_fragment_wind_deg"
+            layout="@layout/text_with_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:header="@{@string/wind_direction}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/weather_fragment_guideline"
+            app:layout_constraintTop_toBottomOf="@id/weather_fragment_humidity"
+            app:value="@{String.valueOf(item.windDeg)}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

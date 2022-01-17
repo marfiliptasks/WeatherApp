@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="find_location">Find place</string>
+    <string name="country">Country</string>
+    <string name="city">City name</string>
+    <string name="location_item_area_title">Type of area</string>
+    <string name="area">Name of area</string>
+    <string name="wrong_city_name">Wrong city name!</string>
+    <string name="humidity">Humidity</string>
+    <string name="loading_data">Loading data...</string>
+    <string name="connection_error">Error occured! Check your connection!</string>
+    <string name="other_error">Error occured! You may exceeded daily limit.</string>
+    <string name="you_were_looking_for">Search for</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="sunset">Sunset</string>
+    <string name="temp_day">Temp. day</string>
+    <string name="temp_night">Temp night</string>
+    <string name="temp_eve">Temp. eve</string>
+    <string name="temp_morn">Temp. morn</string>
+    <string name="pressure">Pressure</string>
+    <string name="wind_direction">Wind direction</string>
+    <string name="wind_speed">Wind speed</string>
+    <string name="location_card_transition_name" translatable="false">location_item_card_%1$s</string>
+    <string name="weather_card_transition_name" translatable="false">weather_card_transition</string>
+</resources>
