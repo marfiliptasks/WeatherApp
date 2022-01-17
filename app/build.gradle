@@ -10,7 +10,7 @@ plugins {
 android {
     compileSdkVersion 31
     buildToolsVersion "30.0.2"
-    
+
     defaultConfig {
         applicationId "com.mf.weatherapp"
         minSdkVersion 23
@@ -33,7 +33,14 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+            debuggable false
+            shrinkResources true
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
         }
     }
 

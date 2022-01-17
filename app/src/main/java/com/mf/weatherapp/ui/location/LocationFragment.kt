@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.FragmentNavigatorExtras
-import com.google.android.material.transition.MaterialFadeThrough
 import com.mf.weatherapp.R
 import com.mf.weatherapp.databinding.LocationFragmentBinding
 import com.mf.weatherapp.model.location.LocationModel
